@@ -15,7 +15,7 @@ class Timer {
     if (!this.stopStatement){
       if (!this.pauseStatement){
         document.getElementById("showTimer").innerHTML = this.counter;
-        --this.counter;
+        this.counter--;
       }
       
       if (this.counter < 0){
