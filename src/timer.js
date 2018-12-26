@@ -16,7 +16,7 @@ class Timer {
     if (!this.stopStatement){
       if (!this.pauseStatement){
         document.getElementById("showTimer").innerHTML = this.counter;
-        --this.counter;
+        this.counter--;
       }
       
       if (this.counter < 0){
@@ -90,3 +90,4 @@ window.onload = function(){
   document.getElementById("stop").onclick = () => a.stop();
   document.getElementById("x2").onclick = () => a.setSpeed();
 };
+
