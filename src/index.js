@@ -51,6 +51,12 @@ import './styles.css';
   reset.setAttribute('class','button');
   divOfButtons.appendChild(reset);
 
+  var x2 = document.createElement('button');
+  x2.innerHTML='X2';
+  x2.setAttribute('id','x2');
+  x2.setAttribute('class','button');
+  divOfButtons.appendChild(x2);
+
   /*Вывод секунд таймера*/
   var showTimer=document.createElement('div');
   showTimer.setAttribute('id','showTimer');

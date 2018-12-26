@@ -9,6 +9,7 @@ class Timer {
     this.pauseStatement = false;
     this.startStatement = false;
     this.stopStatement = true;
+    this.x2Statement = false;
   }
 
   timer() {
@@ -22,7 +23,24 @@ class Timer {
         this.callback.call();      
         this.stop();
       }
-      setTimeout(() => this.timer(), 1000);
+      this.ping();
+      // setTimeout(() => this.timer(), 1000);
+    }
+  }
+
+  ping(){
+    if(!this.x2Statement){
+    setTimeout(() => this.timer(), 1000);
+    }else{
+      setTimeout(() => this.timer(), 500);
+    }
+  }
+
+  setSpeed(){
+    if(!this.x2Statement){
+      this.x2Statement = true;
+    }else{
+      this.x2Statement = false;
     }
   }
 
@@ -70,4 +88,5 @@ window.onload = function(){
   document.getElementById("reset").onclick = () => a.reset();
   document.getElementById("pause").onclick = () => a.pause();
   document.getElementById("stop").onclick = () => a.stop();
+  document.getElementById("x2").onclick = () => a.setSpeed();
 };
